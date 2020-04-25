@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+html {
+  font-size: 10px;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: #272727;
+  color: #fff;
+}
+
+.score {
+  height: 30vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  h1 {
+    font-size: 3rem;
+    font-weight: 300;
+  }
+  p {
+    font-weight: 300;
+    font-size: 2.3rem;
+    text-align: center;
+    padding: 5px;
+  }
+}
+
+.start {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  transition: opacity 0.5s ease-in-out;
+  h1 {
+    font-size: 4rem;
+    font-weight: 400;
+  }
+  .btn {
+    border: none;
+    border-radius: 5px;
+    width: 15rem;
+    font-size: 2.2rem;
+    padding: 0.5rem 0.5rem;
+    margin-bottom: 6rem;
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgb(157, 223, 53);
+    }
+  }
+}
+
+.main-game {
+  position: absolute;
+  top: 30vh;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.5s ease-in 0.5s;
+  h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 400;
+  }
+  .hands {
+    display: flex;
+    justify-content: space-around;
+
+    .player-hand {
+      transform: rotateY(180deg);
+    }
+    .computer-hand {
+    }
+  }
+  .options {
+    display: flex;
+    justify-content: space-evenly;
+    .rock,
+    .paper,
+    .scissors {
+      border: none;
+      width: 8rem;
+      border-radius: 5px;
+      font-size: 1.8rem;
+      background-color: rgb(157, 223, 53);
+      padding: 0.5rem 0.5rem;
+      cursor: pointer;
+      outline: none;
+    }
+  }
+}
+
+.fadeOut {
+  opacity: 0;
+  pointer-events: none;
+}
+.fadeIn {
+  opacity: 1;
+  pointer-events: all;
+}
+
+@keyframes shakePlayer {
+  0% {
+    transform: translateY(0px) rotateY(180deg);
+  }
+  15% {
+    transform: translateY(-50px) rotateY(180deg);
+  }
+  25% {
+    transform: translateY(0px) rotateY(180deg);
+  }
+  35% {
+    transform: translateY(-50px) rotateY(180deg);
+  }
+  50% {
+    transform: translateY(0px) rotateY(180deg);
+  }
+  65% {
+    transform: translateY(-50px)  rotateY(180deg);
+  }
+  75% {
+    transform: translateY(0px)  rotateY(180deg);
+  }
+  85% {
+    transform: translateY(-50px)  rotateY(180deg);
+  }
+  100% {
+    transform: translateY(  0px) rotateY(180deg) ;
+  }
+}
+
+@keyframes shakeComputer {
+  0% {
+    transform: translateY(0px);
+  }
+  15% {
+    transform: translateY(-50px);
+  }
+  25% {
+    transform: translateY(0px);
+  }
+  35% {
+    transform: translateY(-50px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  65% {
+    transform: translateY(-50px) ;
+  }
+  75% {
+    transform: translateY(0px) ;
+  }
+  85% {
+    transform: translateY(-50px) ;
+  }
+  100% {
+    transform: translateY(  0px) ;
+  }
+}
